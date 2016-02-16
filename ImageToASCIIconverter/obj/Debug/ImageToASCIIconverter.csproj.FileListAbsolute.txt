@@ -6,3 +6,15 @@ C:\Users\wouter\Desktop\ImageToASCIIconverter\obj\Debug\ImageToASCIIconverter.cs
 C:\Users\wouter\Desktop\ImageToASCIIconverter\obj\Debug\ImageToASCIIconverter.Form1.resources
 C:\Users\wouter\Desktop\ImageToASCIIconverter\obj\Debug\ImageToASCIIconverter.Properties.Resources.resources
 C:\Users\wouter\Desktop\ImageToASCIIconverter\obj\Debug\ImageToASCIIconverter.csproj.GenerateResource.Cache
+C:\Users\wouter\Documents\Github\AsciiConverter\ImageToASCIIconverter\obj\Debug\ImageToASCIIconverter.exe
+C:\Users\wouter\Documents\Github\AsciiConverter\ImageToASCIIconverter\obj\Debug\ImageToASCIIconverter.pdb
+C:\Users\wouter\Documents\Github\AsciiConverter\ImageToASCIIconverter\bin\Debug\ImageToASCIIconverter.exe
+C:\Users\wouter\Documents\Github\AsciiConverter\ImageToASCIIconverter\bin\Debug\ImageToASCIIconverter.pdb
+C:\Users\wouter\Documents\Github\AsciiConverter\ImageToASCIIconverter\obj\Debug\ImageToASCIIconverter.csprojResolveAssemblyReference.cache
+C:\Users\wouter\Documents\Github\AsciiConverter\ImageToASCIIconverter\obj\Debug\ImageToASCIIconverter.Form1.resources
+C:\Users\wouter\Documents\Github\AsciiConverter\ImageToASCIIconverter\obj\Debug\ImageToASCIIconverter.Properties.Resources.resources
+C:\Users\wouter\Documents\Github\AsciiConverter\ImageToASCIIconverter\obj\Debug\ImageToASCIIconverter.csproj.GenerateResource.Cache
+C:\Users\wouter\Documents\Github\AsciiConverter\ImageToASCIIconverter\bin\Debug\HtmlRenderer.dll
+C:\Users\wouter\Documents\Github\AsciiConverter\ImageToASCIIconverter\bin\Debug\HtmlRenderer.WinForms.dll
+C:\Users\wouter\Documents\Github\AsciiConverter\ImageToASCIIconverter\bin\Debug\HtmlRenderer.pdb
+C:\Users\wouter\Documents\Github\AsciiConverter\ImageToASCIIconverter\bin\Debug\HtmlRenderer.WinForms.pdb
