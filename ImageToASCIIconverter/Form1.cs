@@ -9,10 +9,6 @@ using System.IO;
 using System.Collections.Specialized;
 using System.Drawing.Imaging;
 
-//************Application to Convert standard Images into ASCII **************//
-//****************By: Thinathayalan Ganesan **********************************//
-//**************Blog: http://CyberSannyasi.blogspot.com **********************//
-
 namespace ImageToASCIIconverter
 {
     public partial class Form1 : Form
@@ -55,6 +51,7 @@ namespace ImageToASCIIconverter
 
             //Enclose the final string between <pre> tags to preserve its formatting
             //and load it in the browser control
+            //string text = "<div><pre style=\"background-color:#0E1517;\">" + "<Font size=0>" + _Content + "</Font></pre><div>";
             string text = "<div><pre style=\"background-color:#0E1517;\">" + "<Font size=0>" + _Content + "</Font></pre><div>";
 
             browserMain.DocumentText = text;
@@ -134,37 +131,7 @@ namespace ImageToASCIIconverter
                 txtPath.Text = openFileDialog1.FileName;
             }
         }
-
-
-        //private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    saveFileDialog1.Filter = "Text File (*.txt)|.txt|HTML (*.htm)|.htm";
-        //    DialogResult diag = saveFileDialog1.ShowDialog();
-        //    if (diag == DialogResult.OK)
-        //    {
-        //        if (saveFileDialog1.FilterIndex == 1)
-        //        {
-        //            //If the format to be saved is HTML
-        //            //Replace all HTML spaces to standard spaces
-        //            //and all linebreaks to CarriageReturn, LineFeed
-        //            _Content = _Content.Replace("&nbsp;", " ").Replace("<BR>", "\r\n");
-        //        }
-        //        else
-        //        {
-        //            //use <pre></pre> tag to preserve formatting when viewing it in browser
-        //            _Content = "<pre>" + _Content + "</pre>";
-        //        }
-        //        StreamWriter sw = new StreamWriter(saveFileDialog1.FileName);
-        //        sw.Write(_Content);
-        //        sw.Flush();
-        //        sw.Close();
-        //    }
-        //}
         private void saveToImage(string html) {
-
-            //Image image = TheArtOfDev.HtmlRenderer.WinForms.HtmlRender.RenderToImage(html);            
-            //image.Save("c:\\test\\image.png", ImageFormat.Png);
-            //Console.WriteLine("image saved");
             
             var htmlToImageConv = new NReco.ImageGenerator.HtmlToImageConverter();
             var jpegBytes = htmlToImageConv.GenerateImage(html, ImageFormat.Png.ToString());
