@@ -18,3 +18,4 @@ C:\Users\wouter\Documents\Github\AsciiConverter\ImageToASCIIconverter\bin\Debug\
 C:\Users\wouter\Documents\Github\AsciiConverter\ImageToASCIIconverter\bin\Debug\HtmlRenderer.WinForms.dll
 C:\Users\wouter\Documents\Github\AsciiConverter\ImageToASCIIconverter\bin\Debug\HtmlRenderer.pdb
 C:\Users\wouter\Documents\Github\AsciiConverter\ImageToASCIIconverter\bin\Debug\HtmlRenderer.WinForms.pdb
+C:\Users\wouter\Documents\Github\AsciiConverter\ImageToASCIIconverter\bin\Debug\NReco.ImageGenerator.dll

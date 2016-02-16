@@ -61,7 +61,7 @@ namespace ImageToASCIIconverter
             htmlPanel.Text = text;
             File.WriteAllText("c:\\test\\test.html", text);
             
-            saveToImage(Text);
+            saveToImage(text);
 
             btnConvertToAscii.Enabled = true;
         }
@@ -161,11 +161,17 @@ namespace ImageToASCIIconverter
         //    }
         //}
         private void saveToImage(string html) {
-                
-                Image image = TheArtOfDev.HtmlRenderer.WinForms.HtmlRender.RenderToImage(html);            
-                image.Save("c:\\test\\image.png", ImageFormat.Png);
-                Console.WriteLine("image saved");
-            }
+
+            //Image image = TheArtOfDev.HtmlRenderer.WinForms.HtmlRender.RenderToImage(html);            
+            //image.Save("c:\\test\\image.png", ImageFormat.Png);
+            //Console.WriteLine("image saved");
+            
+            var htmlToImageConv = new NReco.ImageGenerator.HtmlToImageConverter();
+            var jpegBytes = htmlToImageConv.GenerateImage(html, ImageFormat.Png.ToString());
+            File.WriteAllBytes("c:\\test\\image.png", jpegBytes);
+
+
+        }
 
     }
 }
