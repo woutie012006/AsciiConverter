@@ -20,10 +20,12 @@ namespace ImageToASCIIconverter
             InitializeComponent();
 
             htmlPanel = new TheArtOfDev.HtmlRenderer.WinForms.HtmlPanel();
+            htmlPanel.UseGdiPlusTextRendering = true;
             
             htmlPanel.Dock = DockStyle.Fill;
             groupBox1.Controls.Add(htmlPanel);
             //Controls.Add(htmlPanel);
+            txtPath.Text = "C:\\Users\\wouter\\Desktop\\scene_00011.png";
         }
 
         private string[] _AsciiChars = { "#", "#", "@", "%", "=", "+", "*", ":", "-", ".", "&nbsp;" };
@@ -70,9 +72,9 @@ namespace ImageToASCIIconverter
             Boolean toggle = false;
             StringBuilder sb = new StringBuilder();
             bool test = false;
-
             for (int h = 0; h < image.Height; h++)
             {
+                sb.Append("<div style=\"width:100%;\">");
                 for (int w = 0; w < image.Width; w++)
                 {
 
@@ -90,20 +92,14 @@ namespace ImageToASCIIconverter
                     if (!toggle)
                     {   
                         int index = (((grayColor.R + grayColor.G + grayColor.B) / 3) * 10 / 255);
-                        string t = "<font style=\"color:" + hex + ";\">" + _AsciiChars[index] + "</font>";
+                        string t = "<font style=\"color:" + hex + ";size:0; font-family:Lucida Console;\">" + _AsciiChars[index] + "</font>";
                         sb.Append(t);
                     }
+                
                 }
-                if (!toggle)
-                {
-                    sb.Append("<BR>");
-                    toggle = true;
-                }
-                else
-                {
-                toggle = false;
+                sb.Append("</div>");
+                
             }
-        }
             return sb.ToString();
         }
         private Bitmap GetReSizedImage(Bitmap inputBitmap, int asciiWidth)
@@ -136,7 +132,6 @@ namespace ImageToASCIIconverter
             var htmlToImageConv = new NReco.ImageGenerator.HtmlToImageConverter();
             var jpegBytes = htmlToImageConv.GenerateImage(html, ImageFormat.Png.ToString());
             File.WriteAllBytes("c:\\test\\image.png", jpegBytes);
-
 
         }
 

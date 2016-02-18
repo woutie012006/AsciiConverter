@@ -18,20 +18,25 @@ namespace ImageToASCIIconverter
 
             args = new String[] { "c:\\test\\" };
             string path="";
-            string[] files = Directory.GetFiles(args[0]); 
-
+            string[] files = Directory.GetFiles(args[0]);
+            if (Directory.Exists(Path.GetDirectoryName(files[0]) + "\\" + "output"))
+            {
+                Directory.Delete(Path.GetDirectoryName(files[0]) + "\\" + "output",true);
+            }
             Directory.CreateDirectory(Path.GetDirectoryName(files[0]) + "\\"+"output");
 
-            for (int i = 0; i < files.Length; i++)
+            for (int i = 0; i < files.Length && files[i].EndsWith(".png"); i++)
             {
-
+                System.Console.WriteLine("Starting Rendering" + files[i]);
                 path = files[i];
                 Bitmap imageToConvert = new Bitmap(path, true);
                 
 
                 Content = ConvertToAscii(imageToConvert);
                 string text = "<div><pre style=\"background-color:#0E1517;\"><Font size=0>" + Content + "</Font></pre><div>";
-                saveToImage(text, Path.GetDirectoryName(path) + "\\output\\" + i + ".png");
+                //saveToImage(text, Path.GetDirectoryName(path) + "\\output\\" + i + ".png");
+                saveToImage(text, Path.GetDirectoryName(path) + "\\output\\" + Path.GetFileName(path) + ".png");
+                System.Console.WriteLine("Done Rendering" + files[i]);
             }
         }
         
@@ -67,12 +72,11 @@ namespace ImageToASCIIconverter
             }
             return sb.ToString();
         }
+        static HtmlToImageConverter htmlToImageConv = new NReco.ImageGenerator.HtmlToImageConverter();
 
         private static void saveToImage(string html, string path)
         {
-            var htmlToImageConv = new NReco.ImageGenerator.HtmlToImageConverter();
-            var jpegBytes = htmlToImageConv.GenerateImage(html, ImageFormat.Png.ToString());
-            File.WriteAllBytes(path, jpegBytes);
+            File.WriteAllBytes(path, htmlToImageConv.GenerateImage(html, ImageFormat.Bmp));
         }
     }
 }
